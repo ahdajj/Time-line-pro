@@ -1,0 +1,19 @@
+{
+  "name": "time-line-pro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookieparser": "^0.1.0",
+    "ejs": "^3.1.9",
+    "express": "4.16.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.4.5"
+  }
+}

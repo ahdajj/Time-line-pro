@@ -1,0 +1,43 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  
+
+  <%- include("./partials/nav.ejs") %>
+
+  <a href="/logout">logout</a>
+  <div class="create-blog content">
+
+    <form action="/" method="post">
+      <label for="body">Post Message :</label>
+      <textarea id="body" name="body" required></textarea>
+      <button>Post a Message</button>     
+    </form> 
+  </div>
+   
+  <% if (posts.length > 0) { %>
+    <% posts.forEach(pst => { %>
+
+      <h5 class="title"><%= pst.title %>   <%=pst.created_at%> </h5>
+      <p class="snippet"><%= pst.body %></p>
+      
+      <div>
+        <% if (pst.comment.length > 0) { %>
+          <% pst.comment.forEach(com => { %>
+            <h5 class="title"><%= com.body %> </h5>
+            <% }) %>
+            <% } %>
+      </div>
+     
+      <form action="/comment/<%= pst._id %>" method="post">
+        <input type="text" id="com" name="body" required >
+        <button>Add comment</button>
+      </form>
+   
+      <% }) %>
+      <% } %>
+
+  
+</body>
+</html>

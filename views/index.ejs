@@ -1,0 +1,40 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+      
+
+  <div class="create-blog content" >
+
+    <a href="/signup">Sign up</a>
+    <br>
+    <a href="/login">login</a>
+
+  </div>
+
+  <% if ( posts.length > 0) { %>
+    <% posts.forEach(pst => { %>
+
+      <h3 class="title"><%= pst.title %></h3>
+      <p class="snippet"><%= pst.body %></p>
+      <h5>   <%=pst.created_at%> </h5>
+      <div>
+        <% if (pst.comment.length > 0) { %>
+          <% pst.comment.forEach(com => { %>
+            <h5 class="title"><%= com.body %> </h5>
+            <% }) %>
+            <% } %>
+      </div>
+
+    <% }) %>
+
+    
+
+  <% } else { %>
+    <p>There are no blogs to display...</p>
+  <% } %>
+
+  
+</body>
+</html>

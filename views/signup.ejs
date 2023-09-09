@@ -1,0 +1,21 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+   
+  <div class="create-blog content">
+
+    <form action="/signup" method="post">
+      <label for="Name">User Name :</label>
+      <input type="text" id="title" name="Name" required>
+      <label for="Email">Email:</label>
+      <input type="email" id="body" name="Email" required>
+      <label for="Password">Password:</label>
+      <input type="password" id="body" name="Password" required>
+      <button>Sign up</button>     
+    </form>
+
+  </div>
+</body>
+</html>
